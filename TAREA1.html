@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		</head>
+		<body>
+			<h1>TAREA 1</h1>
+			<script>
+				function hourIntervals (sleep,cb){	
+					setTimeout(function intervals () {
+									var hourUnix = Date.now();
+									if (hourUnix % 2 == 0)
+										console.log(hourUnix);
+									else
+										console.log(":)");
+								},sleep);
+					sleep + 1000;
+					cb();
+				}
+			
+				function fibonacci (firstValue,secondValue,cb) { 
+					thirdValue = firstValue + secondValue;
+					console.log(thirdValue);
+					cb(secondValue,thirdValue,function(firstValue,secondValue,cb){
+													thirdValue = firstValue + secondValue;
+													console.log(thirdValue);
+													cb(secondValue,thirdValue,function(firstValue,secondValue,cb){
+																				thirdValue = firstValue + secondValue;
+																				console.log(thirdValue);
+																				cb(secondValue,thirdValue,function(firstValue,secondValue,cb){
+																											thirdValue = firstValue + secondValue;
+																											console.log(thirdValue);
+																											cb(secondValue,thirdValue);
+																				});
+													});
+					});
+				}
+				fibonacci(0,1,function(firstValue,secondValue,cb){
+										thirdValue = firstValue + secondValue;
+										console.log(thirdValue);
+										cb(secondValue,thirdValue,function(firstValue,secondValue,cb){
+																	thirdValue = firstValue + secondValue;
+																	console.log(thirdValue);
+																	cb(secondValue,thirdValue,function(firstValue,secondValue,cb){
+																								thirdValue = firstValue + secondValue;
+																								console.log(thirdValue);
+																								cb(secondValue,thirdValue,function(firstValue,secondValue,cb){
+																															thirdValue = firstValue + secondValue;
+																															console.log(thirdValue);
+																								});
+																	});
+										});
+				});
+			
+				hourIntervals(1000,function (sleep,cb){
+										setTimeout(function intervals () {
+														var hourUnix = Date.now();
+														if (hourUnix % 2 == 0)
+															console.log(hourUnix);
+														else
+															console.log(":)");
+										},sleep);
+				});
+			</script>
+		</body>
+	</html>
