@@ -1,0 +1,6 @@
+<%- partial('common/navbar.ejs')%>
+<% for(user of users) {%>
+	<p class='name'><%= user.nombre %></p>
+	<li><%= user.edad %></li>
+<% } %>
+<link href='styles/users.css'/>
